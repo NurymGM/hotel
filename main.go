@@ -14,9 +14,19 @@ func main() {
 
 	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("web/static")))) // Serve static files (css, img)
 
+
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) { 
 		http.ServeFile(w, r, "web/templates/index.html")
 	})
+
+	http.HandleFunc("/register", func(w http.ResponseWriter, r *http.Request) {
+		http.ServeFile(w, r, "web/templates/register.html")
+	})
+	
+	http.HandleFunc("/main", func(w http.ResponseWriter, r *http.Request) {
+		http.ServeFile(w, r, "web/templates/main.html")
+	})	
+
 
 	addr := ":8080"
 	log.Printf("Server is running on http://localhost%s\n", addr)
