@@ -12,14 +12,14 @@
 
     <div class="wrapper">
         <div class="title"><span>Register Form</span></div>
-        <form action="main">
+        <form action="/register" method="POST">
           <div class="row">
             <i class="fas fa-user"></i>
-            <input type="text" placeholder="Email" required />
+            <input type="text" name="email" placeholder="Email" required />
           </div>
           <div class="row">
             <i class="fas fa-lock"></i>
-            <input type="password" placeholder="Password" required />
+            <input type="password" name="password" placeholder="Password" required />
           </div>
           <div class="row button">
             <input type="submit" value="Register" />
