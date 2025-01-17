@@ -14,17 +14,19 @@
     <h3> Start planning your perfect stay with us! </h3>
   </div>
   
-  <h1>Available Hotels</h1>
-  <ul>
+  <div class="container text-center">
     {{range .}}
-      <li>
-        <p>Price: ${{.Price}}</p>
-        <p>Rating: {{.Rating}} / 5</p>
-        <p>Available: {{if .IsAvailable}}Yes{{else}}No{{end}}</p>
-        <p><img src="{{.Image}}" alt="Hotel Image" width="150"></p>
-      </li>
+      <div class="hotel-container">
+        <img class="hotel-image" src="{{.Image}}" alt="Hotel Image">
+        <div class="separator"></div> 
+        <div class="hotel-info">
+          <p class="price">Price: $150</p>
+          <p class="rating">Rating: 4.5 / 5</p>
+          <p class="availability">Available: Yes</p>
+        </div>
+      </div>
     {{end}}
-  </ul>
+  </div>
 
 </body>
 </html>

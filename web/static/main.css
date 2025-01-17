@@ -1,5 +1,5 @@
-.header
-{
+/* Header styling */
+.header {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     text-align: center;
     margin-left: auto;
@@ -8,12 +8,102 @@
     padding-bottom: 25px;
 }
 
-body
-{
+body {
     background-color: beige;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-h1
-{
-    font-weight: 700;
+/* Styling for each hotel entry */
+.hotel-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px auto;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    max-width: 600px; /* Adjust layout for large screens */
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    gap: 20px; /* Space between elements */
+}
+
+/* Image styling */
+.hotel-image {
+    max-width: 250px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Separator line */
+.separator {
+    width: 1px;
+    background-color: #ccc;
+    height: 100%;
+}
+
+/* Info section styling */
+.hotel-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically centered */
+    align-items: center; /* Horizontally centered */
+    text-align: center; /* Text alignment */
+}
+
+.hotel-info p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.hotel-info .price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #2a9d8f;
+}
+
+.hotel-info .availability {
+    font-style: italic;
+    color: #e76f51;
+}
+
+.hotel-info .rating {
+    color: #264653;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hotel-container {
+        flex-direction: column; /* Stack image and info vertically */
+        max-width: 90%; /* Use most of the screen width */
+    }
+
+    .hotel-image {
+        max-width: 100%; /* Scale image to fit the container */
+        margin-bottom: 15px; /* Add space between image and info */
+    }
+
+    .separator {
+        display: none; /* Hide the separator for smaller screens */
+    }
+
+    .hotel-info {
+        align-items: flex-start; /* Align info to the left */
+        text-align: left; /* Text starts from the left */
+    }
+}
+
+@media (max-width: 480px) {
+    .hotel-info p {
+        font-size: 14px; /* Smaller font for very small screens */
+    }
+
+    .hotel-info .price {
+        font-size: 16px; /* Adjust price font size */
+    }
 }
