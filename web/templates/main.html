@@ -14,19 +14,17 @@
     <h3> Start planning your perfect stay with us! </h3>
   </div>
   
-  <div class="container text-center">
-    <div class="row">
-      <div class="col" style="background-color: aquamarine;">
-        Column
-      </div>
-      <div class="col" style="background-color: blueviolet;">
-        Column
-      </div>
-      <div class="col" style="background-color: yellowgreen;">
-        Column
-      </div>
-    </div>
-  </div>
+  <h1>Available Hotels</h1>
+  <ul>
+    {{range .}}
+      <li>
+        <p>Price: ${{.Price}}</p>
+        <p>Rating: {{.Rating}} / 5</p>
+        <p>Available: {{if .IsAvailable}}Yes{{else}}No{{end}}</p>
+        <p><img src="{{.Image}}" alt="Hotel Image" width="150"></p>
+      </li>
+    {{end}}
+  </ul>
 
 </body>
 </html>
